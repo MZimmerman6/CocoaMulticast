@@ -32,7 +32,41 @@
 }
 
 -(void) processMulticastData:(float *)data {
+    NSLog(@"procesing multicast data");
+}
+
+-(void) processChromaData:(NSMutableDictionary *)chroma {
     
+    NSLog(@"processing chroma data");
+    NSLog(@"%@",chroma);
+}
+
+-(void) processSpectrumData:(NSMutableDictionary *)spectrum {
+    
+    NSLog(@"processing spectrum data");
+    NSLog(@"%@",spectrum);
+    
+}
+
+-(void) multicastSendSuccessful {
+    NSLog(@"multicast success");
+}
+
+-(void) multicastSendFailed {
+    NSLog(@"multicast failed");
+}
+
+-(void) multicastServerStopped {
+    NSLog(@"multicast stopped");
+}
+
+-(void) sendTestSignal {
+    
+    float* buffer = (float*)calloc(256, sizeof(float));
+    for (int i = 0;i<256;i++) {
+        buffer[i] = (float)i+1;
+    }
+    [server sendMulticast:buffer withLength:256];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

@@ -18,10 +18,13 @@
     MulticastClient *client;
     MulticastServer *server;
     
+    
 }
 
 @property (strong, nonatomic) UIWindow *window;
 
 @property (strong, nonatomic) ViewController *viewController;
+
+-(void) sendTestSignal;
 
 @end

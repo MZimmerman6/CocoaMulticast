@@ -121,7 +121,7 @@
 //        Make sure this is the multicast string we are looking for.
         if(buffer[0]==1 && buffer[1]==2 && buffer[2]==3 && buffer[3]==4)
         {
-            
+            NSLog(@"got data");
             if ([delegate respondsToSelector:@selector(gotMulticastData)]) {
                 [delegate gotMulticastData];
             }
@@ -142,8 +142,8 @@
                 [delegate processSpectrumData:[self getTrackSpectrum]];
             }
             
-            if ([delegate respondsToSelector:@selector(processChromaData::)]) {
-                [delegate processSpectrumData:[self getTrackChroma]];
+            if ([delegate respondsToSelector:@selector(processChromaData:)]) {
+                [delegate processChromaData:[self getTrackChroma]];
             }
         }
     }

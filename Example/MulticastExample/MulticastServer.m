@@ -31,7 +31,7 @@
     
     self = [super init];
     if (self) {
-        
+        delegate = del;
         address = [[NSString alloc] initWithString:add];
         kMulticastAddress = [address UTF8String];
         kPortNumber = port;

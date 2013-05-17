@@ -26,4 +26,12 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(IBAction)sendPressed:(id)sender {
+    
+    AppDelegate* appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+//    [appDelegate setSomLoaded:YES];
+    [appDelegate sendTestSignal];
+    
+}
+
 @end
